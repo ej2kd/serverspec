@@ -33,7 +33,7 @@ describe command('/home/ec2-user/.rbenv/bin/rbenv version') do
 end
 
 # Railsのバージョン確認
-describe command('rails -v') do
+describe command('~/.rbenv/shims/rails -v') do
   its(:stdout) { should match /Rails 6\.1\.4\.4/ }
 end
 
