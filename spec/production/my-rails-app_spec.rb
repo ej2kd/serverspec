@@ -19,13 +19,8 @@ describe package('nodejs') do
   it { should be_installed }
 end
 
-# mysqlのインストール確認
-describe package('mysql') do
-  it { should be_installed }
-end
-
 # Rubyのインストールに必要な各種パッケージのインストール確認
-pkg_list = %w{gcc-c++ openssl-devel readline-devel zlib-devel yarn mysql-devel}
+pkg_list = %w{gcc-c++ openssl-devel readline-devel zlib-devel yarn}
 pkg_list.each do |pkg|
   describe package(pkg) do
     it { should be_installed }
@@ -35,13 +30,13 @@ end
 # Rubyのバージョン確認
 describe command('ruby -v') do
   let(:disable_sudo) { true }
-  its(:stdout) { should match /ruby 2\.6\.8/ }
+  its(:stdout) { should match /ruby 2\.6\.8+/ }
 end
 
 # Railsのバージョン確認
 describe command('rails -v') do
   let(:disable_sudo) { true }
-  its(:stdout) { should match /Rails 6\.1\.4\.1/ }
+  its(:stdout) { should match /Rails 6\.1\.4\.4/ }
 end
 
 # Nginxのインストール確認
