@@ -41,7 +41,7 @@ end
 # Railsのバージョン確認
 describe command('rails -v') do
   let(:disable_sudo) { true }
-  its(:stdout) { should match /Rails 6\.1\.4.\1/ }
+  its(:stdout) { should match /Rails 6\.1\.4\.1/ }
 end
 
 # Nginxのインストール確認
