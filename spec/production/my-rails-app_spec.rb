@@ -29,13 +29,11 @@ end
 
 # Rubyのバージョン確認
 describe command('ruby -v') do
-  let(:disable_sudo) { true }
   its(:stdout) { should match /ruby 2\.6\.8+/ }
 end
 
 # Railsのバージョン確認
 describe command('rails -v') do
-  let(:disable_sudo) { true }
   its(:stdout) { should match /Rails 6\.1\.4\.4/ }
 end
 
