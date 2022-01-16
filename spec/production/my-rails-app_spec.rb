@@ -28,8 +28,8 @@ pkg_list.each do |pkg|
 end
 
 # Rubyのバージョン確認
-describe command('ruby -v') do
-  its(:stdout) { should match /ruby 2\.6\.8+/ }
+describe command('/home/ec2-user/.rbenv/bin/rbenv version') do
+  its(:stdout) { should match /2\.6\.8/ }
 end
 
 # Railsのバージョン確認
