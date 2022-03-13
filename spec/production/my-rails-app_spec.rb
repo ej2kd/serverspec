@@ -34,7 +34,7 @@ end
 
 # Railsのバージョン確認
 describe command('~/.rbenv/shims/rails -v') do
-  its(:stdout) { should match /Rails 6\.1\.4\.4/ }
+  its(:stdout) { should match /Rails 6\.1\.4*/ }
 end
 
 # Nginxのインストール確認
@@ -54,6 +54,6 @@ describe file('/etc/nginx/conf.d/rails.conf') do
 end
 
 # ソケット通信の確認
-describe file('/var/www/rails/my-rails-shop-app/tmp/sockets/puma.sock') do
+describe file('/var/www/my-rails-shop-app/tmp/sockets/puma.sock') do
   it { should be_socket }
 end
